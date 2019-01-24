@@ -1,6 +1,81 @@
 <!doctype html>
 <html>
+	<head>
+		<style type="text/css">
+p {
+	color: white;
+	font-family:monaco;
+}
+.start { 
+	position: relative;
+	display: inline-block;
+	font-family: Monaco, Arial, Helvetica, sans-serif;
+	line-height: 24px;
+	font-size: 24px;
+	color: white;
+	min-width: 360px;
+}
+
+.normal { 
+	position: relative;
+	display: inline-block;
+	font-family: Monaco, Arial, Helvetica, sans-serif;
+	line-height: 30px;
+	font-size: 24px;
+	color: white;
+	min-width: 360px;
+}
+
+.anim-typewriter {
+	  animation: type 4s steps(60, end); 
+	  overflow: hidden;
+	  white-space: nowrap;
+}
+
+.anim-typewriter:nth-child(2){
+  animation: type2 8s steps(60, end);
+}
+.start::after {
+	content: "";
+	position: absolute;
+	bottom: -25px
+	top: 0;
+	right: -15px;
+	/* Remove display: inline-block if not required to be on the same line as text etc */
+	display: inline-block;
+	background-color: #606060;
+	vertical-align: top;
+	width: 10px;
+	/* Set height to the line height of .text */
+	height: 30px;
+	/* 
+	   Animation paramaters:
+	   blink = animation-name, 
+	   1s = animation-duration, 
+	   step-end = animation-timing-function,
+	   infinite = animation-iteration-count
+	 */
+	-webkit-animation: blink 1s step-end infinite;
+	animation: blink 1s step-end infinite;
+}
+	  @-webkit-keyframes blink {
+		  0% { opacity: 1.0; }
+		  50% { opacity: 0.0; }
+		  100% { opacity: 1.0; }
+	  }
+
+	  @keyframes blink {
+		  0% { opacity: 1.0; }
+		  50% { opacity: 0.0; }
+		  100% { opacity: 1.0; }
+	  }
+		</style>
+	<script src="https://cdn.jsdelivr.net/npm/typeit@6.0.2/dist/typeit.min.js"></script>
+		<script src="scripts.js"></script>
+	</head>
 	<body style="background-color:black">
-		<p style="color: white">Bonjour.</p>
+		<p id="start_" class="start">matteo@mervoyer: ~ $ debut</br>bash: Etes-vous sur que vous voulez debuter [on]? o</p>
+		</br>
+		<p id="test" class="normal"></p>
 	</body>
 </html>
